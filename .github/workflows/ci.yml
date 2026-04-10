@@ -1,4 +1,4 @@
-name: CI
+name: CI + Coverage
 
 on:
   push:
@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -21,9 +21,9 @@ jobs:
         run: npm install
 
       - name: Run tests with coverage
-        run: npm test
+        run: npm test -- --coverage
 
-      - name: Send coverage to Coveralls
+      - name: Upload to Coveralls
         run: npx coveralls < coverage/lcov.info
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

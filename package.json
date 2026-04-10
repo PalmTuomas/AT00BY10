@@ -3,17 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "type": "module",
+  "type": "module",
   "scripts": {
-    "test": "jest --coverage",
-    "coverage": "jest --coverage",
-    "coveralls": "cat coverage/lcov.info | npx coveralls"
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "jest": "^29.0.0",
-    "coveralls": "^3.1.1"},
-  "author": "",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+    "coveralls": "^3.1.1"
+  }
 }
