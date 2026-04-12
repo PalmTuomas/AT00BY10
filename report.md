@@ -1,35 +1,46 @@
-# Software Testing Report
+# Software Testing Report: AT00BY10
 
-## 1. Unit Tests
-Unit tests implemented using Jest. Coverage exceeds 90%.
+1. Approach and Implementation
+Tässä projektissa toteutettiin yksikkötestaus valikoiduille kirjaston funktioille käyttäen **Jest**-testikehystä. Koska kirjasto hyödyntää ES-moduuleita (`import`/`export`), projektissa käytettiin **Babelia** koodin kääntämiseen testiajon aikana. 
 
-## 2. Documentation of Unit Tests
-Tests include:
-- normal cases
-- edge cases
-- error cases
+CI/CD-putki toteutettiin **GitHub Actionsilla**, joka automatisoi testien ajon jokaisen push-komennon yhteydessä. Testikattavuusraportit lähetetään automaattisesti **Coveralls**-palveluun, jotta koodin laatua voidaan seurata visuaalisesti.
 
-## 3. GitHub Actions
-CI pipeline runs automatically on push.
+2. Configuration
+### Package.json
+Testit ajetaan komennolla `npm test`, joka suorittaa Jestin kattavuusraportin kanssa:
+```json
+"scripts": {
+  "test": "jest --coverage",
+  "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+}
 
-(ADD SCREENSHOT HERE)
+3. Test Results and Coverage
+Tavoitteena oli saavuttaa vähintään 60 % kattavuus. Projektissa saavutettiin 92.85 % kattavuus testatuille tiedostoille.
+Testatut tiedostot: src/map.js, src/toInteger.js, src/add.js.
+Testaamatta jätetyt tiedostot: Muut kirjaston tiedostot (esim. src/filter.js), koska harjoituksen laajuus oli rajattu.
+.internal-kansio: Jätetty pois testauksesta ja kattavuusraporteista tehtävänannon mukaisesti.
 
-## 4. Coveralls
-Coverage reporting integrated with Coveralls.
+[LISÄÄ TÄHÄN KUVAKAAPPKAUS JESTIN TESTITAULUKOSTA]
 
-## 5. Approach
-- Jest for testing
-- GitHub Actions for CI
-- Coveralls for reporting
+4. GitHub Actions and Coveralls
+CI-putki toimii virheettömästi. Jokainen commit suorittaa testit onnistuneesti ja päivittää Coveralls-raportin.
 
-## 6. Test Results
-All tests pass.
-Coverage: >90%
+[LISÄÄ TÄHÄN KUVAKAAPPKAUS GITHUB ACTIONS -VÄLILEHDESTÄ (Vihreä lista)]
+[LISÄÄ TÄHÄN KUVAKAAPPKAUS COVERALLS-SIVUSTA]
 
-(ADD SCREENSHOT)
+Linkki raporttiin: https://coveralls.io/github/PalmTuomas/AT00BY10
 
-## 7. Issues
-Example issue:
-- toString(null) edge behavior
+5. Issue Reports
+Testauksen aikana löytyi seuraavat huomiot/virheet:
+toInteger.js: Funktio palauttaa erittäin suuren numeron Infinityn sijasta, mikä voi aiheuttaa ongelmia laskutoimituksissa.
+map.js: Funktio palauttaa tyhjän taulukon, jos syöte on null.
 
-## 8. Final Verdict
+[LISÄÄ TÄHÄN KUVAKAAPPKAUS GITHUBIN ISSUES-VÄLILEHDESTÄ]
+
+6. Final Verdict (Production Readiness)
+Mielestäni kirjasto ei ole vielä valmis tuotantoon (production ready) seuraavista syistä:
+
+Vaikka testikattavuus on korkea, testauksessa löytyi epäloogisuuksia rajatapausten (edge cases) käsittelyssä.
+.internal-kansio on täysin testaamatta, ja koska kirjaston julkiset funktiot tukeutuvat niihin, taustalogiikan luotettavuutta ei voida taata.
+
+Kirjasto vaatii kattavamman testauksen kaikille moduuleille ja löydettyjen bugien korjaamisen ennen julkaisua.
