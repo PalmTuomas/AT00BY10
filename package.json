@@ -1,11 +1,9 @@
 {
   "name": "software-testing-assignment",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "coveralls": "npx coveralls < coverage/lcov.info"
   },
   "devDependencies": {
     "jest": "^29.0.0",
