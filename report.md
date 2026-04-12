@@ -7,12 +7,7 @@ CI/CD-putki toteutettiin **GitHub Actionsilla**, joka automatisoi testien ajon j
 
 2. Configuration
 ### Package.json
-Testit ajetaan komennolla `npm test`, joka suorittaa Jestin kattavuusraportin kanssa:
-```json
-"scripts": {
-  "test": "jest --coverage",
-  "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
-}
+Testit ajetaan komennolla `npm test`, joka suorittaa Jestin kattavuusraportin kanssa.
 
 3. Test Results and Coverage
 Tavoitteena oli saavuttaa vähintään 60 % kattavuus. Projektissa saavutettiin 92.85 % kattavuus testatuille tiedostoille.
