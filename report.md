@@ -32,7 +32,6 @@ Testauksen aikana löytyi seuraavat huomiot/virheet:
 toInteger.js: Funktio palauttaa erittäin suuren numeron Infinityn sijasta, mikä voi aiheuttaa ongelmia laskutoimituksissa.
 map.js: Funktio palauttaa tyhjän taulukon, jos syöte on null.
 
-[LISÄÄ TÄHÄN KUVAKAAPPKAUS GITHUBIN ISSUES-VÄLILEHDESTÄ]
 
 6. Final Verdict (Production Readiness)
 Mielestäni kirjasto ei ole vielä valmis tuotantoon (production ready) seuraavista syistä:
