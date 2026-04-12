@@ -20,13 +20,15 @@ Testatut tiedostot: src/map.js, src/toInteger.js, src/add.js.
 Testaamatta jätetyt tiedostot: Muut kirjaston tiedostot (esim. src/filter.js), koska harjoituksen laajuus oli rajattu.
 .internal-kansio: Jätetty pois testauksesta ja kattavuusraporteista tehtävänannon mukaisesti.
 
-[LISÄÄ TÄHÄN KUVAKAAPPKAUS JESTIN TESTITAULUKOSTA]
+![testit](https://github.com/user-attachments/assets/ea9971ae-679c-4941-8148-0d74e2c00f9c)
 
 4. GitHub Actions and Coveralls
 CI-putki toimii virheettömästi. Jokainen commit suorittaa testit onnistuneesti ja päivittää Coveralls-raportin.
 
-[LISÄÄ TÄHÄN KUVAKAAPPKAUS GITHUB ACTIONS -VÄLILEHDESTÄ (Vihreä lista)]
-[LISÄÄ TÄHÄN KUVAKAAPPKAUS COVERALLS-SIVUSTA]
+![GitHub-Actions](https://github.com/user-attachments/assets/d49b49ac-0f4b-4a03-8ba4-0a054b5672e0)
+
+![coveralls](https://github.com/user-attachments/assets/a068f0d5-b495-48da-83d3-1e9a5edb7562)
+
 
 Linkki raporttiin: https://coveralls.io/github/PalmTuomas/AT00BY10
 
